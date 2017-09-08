@@ -128,6 +128,7 @@ CALCULATING VALIDATION AUC PER CLASS
 In order to calculate the validation AUC per class after training a model, the "AUC_per_class.py" script is used. This script saves the validation AUC of each class to a csv.
 
 In the script, the "predictions" variable needs to be pointed at the corresponding .pkl file of the form "TargetsPredictedPerBird4TrainFilesMatrix_xx.pkl" and the true_lables variable needs to be pointed at the corresponding "TargetsTruePerBird4TrainFilesMatrix_xx.pkl" where "xx" refers to the training ID number. The name of the csv file produced by this script can be changed from line 30 to differentiate between the results from different files.
+
 --------------------------------------------------------
 
 
