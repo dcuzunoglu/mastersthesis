@@ -64,6 +64,7 @@ In order to reproduce model-A, the following script should be run after running 
 This script is set to be run with fixed validation indices (saved in the outputs/variables directory, these are the same fixed indices we used in our experiments) in order to eliminate the randomization effect arising from using different validation indices for the validation set at each run. If you would like to make a trial run with newly generated validation indices, turn off the "used_fixed_cv_indices" flag. 
 
 In order to save time in the following runs, this model also saves some training and test design matrices, feature ids list, features ids per bird class, and list of train files per bird class to disk after a run. In order to load the saved variables in the following runs, turn on the "load_training_data" and "load_testing_data" flags.
+
 ---------------------------------------------------------
 
 
@@ -86,6 +87,7 @@ This script averages the feature importance rankings returned from the runs of 4
 This script runs the model with feature selection by using the ranked feature csv files returned from feature_importance_ranking.py. By default, this script is set to be run with newly generated validation indices each time, but if you would like to run the fixed cv indices, turn on the "use_fixed_cv_indices" flag.
 
 In order to save time in the following runs, this model also saves some training and test design matrices, feature ids list, features ids per bird class, and list of train files per bird class to disk after a run. In order to load the saved variables in the following runs, turn on the "load_training_data" and "load_testing_data" flags.
+
 --------------------------------------------------------
 
 
@@ -115,6 +117,7 @@ This is the same script used to run model-FS, but some changes need to be done f
 Then, line 711 needs to be commented out and line 710 that contains the variable augmentation levels should be uncommented. This would enable the script to use variable augmentation after feature selection.
 
 In order to save time in the following runs, this model also saves some training and test design matrices, feature ids list, features ids per bird class, and list of train files per bird class to disk after a run. In order to load the saved variables in the following runs, turn on the "load_training_data" and "load_testing_data" flags.
+
 -------------------------------------------------------
 
 
@@ -133,6 +136,7 @@ In the script, the "predictions" variable needs to be pointed at the correspondi
 SUBMITTING PREDICTIONS FOR EVALUATION ON KAGGLE
 
 Our predictions contain 88 rows per test file instead of 87 rows per test file (e.g. one row per bird class). The additional row per file is caused by the file duration column in the training and testing labels in addition to the class columns. Thus, in order to submit for evaluations, the class 88 rows need to be removed from the prediction csv's. To do this, we use the "remove_88.py" script. In the script, simply point the input_csv variable to the csv submission file you want to fix. The script will then produce a submission script in the same directory as the input script with class 88 removed, which can be submitted for evaluation.
+
 ---------------------------------------------------------
 
 
