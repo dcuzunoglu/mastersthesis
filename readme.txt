@@ -1,5 +1,3 @@
-# variable_augmentation_thesis
-
 *******************
 This readme contains the instructions to run the scripts I've used in my master's thesis:
 
@@ -41,8 +39,7 @@ REPRODUCING THE BASELINE MODEL (MODEL-O)
 
 In order to reproduce model-O (a reproduction of Mario Lasseck's approach to NIPS4b), the following scripts can be run in the given order:
 
-- 1_1_segmentAllFiles.py (to segment the spectrograms)
-
+- 1_1_segmentAllFiles.py (to segment the spectrograms) 				
 - 2_1_getSegmentProbabilitiesPerTrainFile.py (to create segment probabilities from the segmented spectrograms for training recordings)
 
 - 2_2_getSegmentProbabilitiesPerTestFile.py (to create segment probabilities from the segmented spectrograms for testing recordings)
@@ -132,7 +129,7 @@ In the script, the "predictions" variable needs to be pointed at the correspondi
 ---------------------------------------------------------
 SUBMITTING PREDICTIONS FOR EVALUATION ON KAGGLE
 
-Our predictions contain 88 rows per test file instead of 87 rows per test file (e.g. one row per bird class). The additional row per file is caused by the file duration column in the training and testing labels in addition to the class columns. Thus, in order to submit for evaluations, the class 88 rows need to be removed from the prediction csv's. To do this, we use the "remove_88.py" script. In the script, simply point the input_csv variable to the csv submission file you want to fix. The script will then produce a submission script in the same directory as the input script with class 88 removed, which can be submitted for evaluation.
+Our predictions contain 88 rows per test file instead of 87 rows per test file (e.g. one row per bird class). The additional row per file is caused by the file duration column in the training and testing labels in addition to the class columns. Thus, in order to submit for evaluations, the class 88 rows need to be removed from the prediction csv's. To do this, we use the "remove_88.py" script. In the script, simply point the input_csv variable to the csv submission file you want to fix. The script will then produce a submission script in the same directory as the input script with class 88 removed, which can be submitted for evaluation.  
 ---------------------------------------------------------
 
 
